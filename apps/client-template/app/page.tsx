@@ -1,4 +1,9 @@
-import { HeroCinematic, ServicesEditorial, TestimonialsEditorial } from "@novara/ui-blocks";
+import {
+  HeroCinematic,
+  ServicesEditorial,
+  TestimonialsEditorial,
+  PricingTiered
+} from "@novara/ui-blocks";
 import { editorialTheme } from "@novara/themes";
 
 export default function Page() {
@@ -53,6 +58,58 @@ export default function Page() {
             author: "Elodie Marsh",
             role: "Founder",
             company: "Marsh Photography"
+          }
+        ]}
+      />
+
+      <PricingTiered
+        theme={editorialTheme}
+        eyebrow="Engagement"
+        headline="One foundation. Three ways to begin."
+        sub="Choose the path that matches where you are. Every tier includes design, build, hosting, and continuous care."
+        tiers={[
+          {
+            name: "Launch Plan",
+            price: "£79",
+            cadence: "/month",
+            description: "No upfront. Novara retains site ownership while you grow.",
+            features: [
+              "Bespoke design",
+              "Premium hosting",
+              "Monthly content updates",
+              "Performance monitoring",
+              "Cancel any time"
+            ],
+            cta: { label: "Begin Launch Plan", href: "#launch" }
+          },
+          {
+            name: "Ownership Plan",
+            price: "£499",
+            cadence: "+ £49/mo",
+            description: "Own the site outright from day one. Retainer covers care.",
+            features: [
+              "Bespoke design",
+              "Full ownership transfer",
+              "Hosting included",
+              "Quarterly refinements",
+              "Priority support"
+            ],
+            cta: { label: "Begin Ownership", href: "#ownership" },
+            featured: true
+          },
+          {
+            name: "Premium",
+            price: "From £2,500",
+            cadence: "bespoke retainer",
+            description: "For brands requiring custom systems, automation, and editorial work.",
+            features: [
+              "Custom architecture",
+              "Automation engineered to fit",
+              "Quarterly strategy",
+              "Dedicated build team",
+              "Award-tier finish"
+            ],
+            cta: { label: "Request Proposal", href: "#premium" }
           }
         ]}
       />
