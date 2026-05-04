@@ -1,4 +1,4 @@
-import { HeroCinematic, ServicesEditorial } from "@novara/ui-blocks";
+import { HeroCinematic, ServicesEditorial, TestimonialsEditorial } from "@novara/ui-blocks";
 import { editorialTheme } from "@novara/themes";
 
 export default function Page() {
@@ -20,27 +20,39 @@ export default function Page() {
         theme={editorialTheme}
         eyebrow="Capabilities"
         headline="Systems designed to be felt, not noticed."
-        sub="Every engagement compounds - design, code, and automation working as one infrastructure beneath your brand."
+        sub="Every engagement compounds — design, code, and automation working as one infrastructure beneath your brand."
         items={[
           {
             title: "Premium Websites",
-            description:
-              "Bespoke Next.js builds engineered for performance, SEO, and longevity. Design that reflects positioning, not trends."
+            description: "Bespoke Next.js builds engineered for performance, SEO, and longevity."
           },
           {
             title: "Automation Systems",
             description:
-              "Lead routing, booking, review collection, and follow-up - operating quietly in the background so your team focuses on the work."
+              "Lead routing, booking, review collection, and follow-up running quietly in the background."
           },
           {
             title: "Brand Identity",
             description:
-              "Visual systems built around restraint. Type, colour, and motion direction that scales across every surface."
+              "Visual systems built around restraint — type, colour, and motion that scale across every surface."
           },
           {
             title: "Ongoing Care",
-            description:
-              "Hosting, monitoring, content updates, and continuous refinement under a single retainer. No tickets, no friction."
+            description: "Hosting, monitoring, and continuous refinement under a single retainer."
+          }
+        ]}
+      />
+
+      <TestimonialsEditorial
+        theme={editorialTheme}
+        eyebrow="In their words"
+        items={[
+          {
+            quote:
+              "Novara delivered a system, not a website. Six months in, our enquiries doubled and we haven’t touched a thing.",
+            author: "Elodie Marsh",
+            role: "Founder",
+            company: "Marsh Photography"
           }
         ]}
       />
