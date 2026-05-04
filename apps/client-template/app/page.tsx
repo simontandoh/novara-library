@@ -2,7 +2,8 @@ import {
   HeroCinematic,
   ServicesEditorial,
   TestimonialsEditorial,
-  PricingTiered
+  PricingTiered,
+  FAQAccordion
 } from "@novara/ui-blocks";
 import { editorialTheme } from "@novara/themes";
 
@@ -110,6 +111,45 @@ export default function Page() {
               "Award-tier finish"
             ],
             cta: { label: "Request Proposal", href: "#premium" }
+          }
+        ]}
+      />
+
+      <FAQAccordion
+        theme={editorialTheme}
+        eyebrow="Considerations"
+        headline="Everything you’d ask, before you ask it."
+        sub="If something’s missing, send us a note. We’ll answer it the same day."
+        items={[
+          {
+            question: "How long does a typical build take?",
+            answer:
+              "Launch Plan sites ship in 5–7 working days. Ownership builds run 2–3 weeks. Premium engagements are scoped per brief, typically 4–8 weeks."
+          },
+          {
+            question: "Do I own the site under the Launch Plan?",
+            answer:
+              "Novara retains ownership during the subscription. You can transition to ownership at any point by paying the difference to the Ownership Plan tier — full code, hosting, and accounts transfer to you."
+          },
+          {
+            question: "What if I want to leave?",
+            answer:
+              "Launch Plan cancels with 30 days’ notice. Ownership and Premium have no lock-in beyond the initial term. We hand over cleanly, no friction."
+          },
+          {
+            question: "Can you handle hosting and maintenance?",
+            answer:
+              "Every tier includes premium hosting on Vercel or Cloudflare, SSL, monitoring, security updates, and content adjustments. You never touch infrastructure unless you choose to."
+          },
+          {
+            question: "Do you work with my existing brand?",
+            answer:
+              "Yes. We can build inside your established identity, refine it, or develop something new alongside the site. Brand work scopes separately under Premium."
+          },
+          {
+            question: "What about automation — what’s actually possible?",
+            answer:
+              "Lead routing, missed-call texting, review collection, booking confirmations, follow-up sequences, dashboard reporting — anything that removes friction from your operations. We scope per business."
           }
         ]}
       />
