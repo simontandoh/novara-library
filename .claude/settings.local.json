@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm create *)",
+      "Bash(pnpm *)",
+      "Bash(chmod +x \"F:\\\\Web Projects\\\\novara-library\\\\scripts\\\\new-client.sh\")",
+      "Bash(git add *)"
+    ]
+  }
+}
