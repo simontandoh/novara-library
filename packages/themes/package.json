@@ -1,7 +1,17 @@
 {
-  "name": "@novara/themes",
+  "name": "@simontandoh/novara-themes",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "main": "./src/index.ts",
-  "types": "./src/index.ts"
+  "types": "./src/index.ts",
+  "files": ["src"],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "restricted"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/simontandoh/novara-library.git",
+    "directory": "packages/themes"
+  }
 }

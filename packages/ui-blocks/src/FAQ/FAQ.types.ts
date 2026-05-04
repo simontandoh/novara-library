@@ -1,4 +1,4 @@
-import type { NovaraTheme } from "@novara/themes";
+import type { NovaraTheme } from "@simontandoh/novara-themes";
 
 export type FAQItem = {
   question: string;

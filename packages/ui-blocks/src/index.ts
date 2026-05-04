@@ -3,3 +3,4 @@ export * from "./Services";
 export * from "./Testimonials";
 export * from "./Pricing";
 export * from "./FAQ";
+export * from "./Footer";

@@ -3,9 +3,10 @@ import {
   ServicesEditorial,
   TestimonialsEditorial,
   PricingTiered,
-  FAQAccordion
-} from "@novara/ui-blocks";
-import { editorialTheme } from "@novara/themes";
+  FAQAccordion,
+  FooterMinimal
+} from "@simontandoh/novara-ui-blocks";
+import { editorialTheme } from "@simontandoh/novara-themes";
 
 export default function Page() {
   return (
@@ -151,6 +152,20 @@ export default function Page() {
             answer:
               "Lead routing, missed-call texting, review collection, booking confirmations, follow-up sequences, dashboard reporting — anything that removes friction from your operations. We scope per business."
           }
+        ]}
+      />
+
+      <FooterMinimal
+        theme={editorialTheme}
+        brand="Novara"
+        tagline="Invisible systems powering visible brands."
+        social={[
+          { label: "Instagram", href: "https://instagram.com/novara" },
+          { label: "LinkedIn", href: "https://linkedin.com/company/novara" }
+        ]}
+        legal={[
+          { label: "Privacy", href: "/privacy" },
+          { label: "Terms", href: "/terms" }
         ]}
       />
     </main>

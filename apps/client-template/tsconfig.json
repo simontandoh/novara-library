@@ -20,8 +20,8 @@
     ],
     "paths": {
       "@/*": ["./*"],
-      "@novara/themes": ["../../packages/themes/src/index.ts"],
-      "@novara/ui-blocks": ["../../packages/ui-blocks/src/index.ts"]
+      "@simontandoh/novara-themes": ["../../packages/themes/src/index.ts"],
+      "@simontandoh/novara-ui-blocks": ["../../packages/ui-blocks/src/index.ts"]
     }
   },
   "include": [
