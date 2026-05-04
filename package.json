@@ -1,0 +1,15 @@
+{
+  "name": "novara-library",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "pnpm --filter client-template dev",
+    "build": "pnpm --filter client-template build",
+    "new-client": "bash scripts/new-client.sh"
+  },
+  "packageManager": "pnpm@9.0.0"
+}
