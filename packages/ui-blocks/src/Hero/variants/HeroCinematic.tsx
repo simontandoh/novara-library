@@ -10,7 +10,7 @@ export function HeroCinematic({ eyebrow, headline, sub, ctaPrimary, image, theme
     <section
       style={{
         position: "relative",
-        minHeight: "100vh",
+        minHeight: "100svh",
         background: theme.colors.bg,
         color: theme.colors.text,
         overflow: "hidden",
@@ -19,7 +19,7 @@ export function HeroCinematic({ eyebrow, headline, sub, ctaPrimary, image, theme
     >
       {image && (
         <motion.div
-          initial={{ scale: 1.15, opacity: 0 }}
+          initial={{ scale: 1.05, opacity: 0 }}
           animate={{ scale: 1, opacity: 0.55 }}
           transition={{ duration: 1.8, ease }}
           style={{
@@ -27,7 +27,8 @@ export function HeroCinematic({ eyebrow, headline, sub, ctaPrimary, image, theme
             inset: 0,
             backgroundImage: `url(${image.src})`,
             backgroundSize: "cover",
-            backgroundPosition: "center"
+            backgroundPosition: "center center",
+            backgroundRepeat: "no-repeat"
           }}
           aria-hidden
         />
@@ -49,7 +50,7 @@ export function HeroCinematic({ eyebrow, headline, sub, ctaPrimary, image, theme
           maxWidth: "72rem",
           margin: "0 auto",
           padding: `${theme.spacing.section} 1.5rem`,
-          minHeight: "100vh",
+          minHeight: "100svh",
           display: "flex",
           flexDirection: "column",
           justifyContent: "flex-end"
