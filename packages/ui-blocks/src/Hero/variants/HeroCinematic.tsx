@@ -1,13 +1,47 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useSyncExternalStore } from "react";
 import type { HeroProps } from "../Hero.types";
+
+function subscribeMobileLayout(onStoreChange: () => void) {
+  const mq = window.matchMedia("(max-width: 767px)");
+  mq.addEventListener("change", onStoreChange);
+  return () => mq.removeEventListener("change", onStoreChange);
+}
+
+function getMobileLayoutSnapshot() {
+  return window.matchMedia("(max-width: 767px)").matches;
+}
+
+function getMobileLayoutServerSnapshot() {
+  return false;
+}
+
+function useMobileHeroLayout() {
+  return useSyncExternalStore(
+    subscribeMobileLayout,
+    getMobileLayoutSnapshot,
+    getMobileLayoutServerSnapshot
+  );
+}
 
 export function HeroCinematic({ eyebrow, headline, sub, ctaPrimary, image, theme }: HeroProps) {
   const ease = theme.motion.ease;
+  const isMobileLayout = useMobileHeroLayout();
+
+  const bgStyle = {
+    position: "absolute" as const,
+    inset: 0,
+    backgroundImage: image ? `url(${image.src})` : undefined,
+    backgroundSize: "cover" as const,
+    backgroundPosition: "center center" as const,
+    backgroundRepeat: "no-repeat" as const
+  };
 
   return (
     <section
+      data-hero
       style={{
         position: "relative",
         minHeight: "100svh",
@@ -17,22 +51,26 @@ export function HeroCinematic({ eyebrow, headline, sub, ctaPrimary, image, theme
         fontFamily: theme.fonts.body
       }}
     >
-      {image && (
-        <motion.div
-          initial={{ scale: 1.05, opacity: 0 }}
-          animate={{ scale: 1, opacity: 0.55 }}
-          transition={{ duration: 1.8, ease }}
-          style={{
-            position: "absolute",
-            inset: 0,
-            backgroundImage: `url(${image.src})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center center",
-            backgroundRepeat: "no-repeat"
-          }}
-          aria-hidden
-        />
-      )}
+      {image &&
+        (isMobileLayout ? (
+          <div
+            style={{
+              ...bgStyle,
+              opacity: 0.55,
+              transform: "none",
+              willChange: "auto"
+            }}
+            aria-hidden
+          />
+        ) : (
+          <motion.div
+            initial={{ scale: 1.05, opacity: 0 }}
+            animate={{ scale: 1, opacity: 0.55 }}
+            transition={{ duration: 1.8, ease }}
+            style={bgStyle}
+            aria-hidden
+          />
+        ))}
 
       <div
         style={{
